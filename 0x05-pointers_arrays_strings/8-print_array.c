@@ -5,6 +5,8 @@
  * followed by a new line.
  * @a: This is the input array
  * @n: This is the length of the array
+ *
+ *
  */
 void print_array(int *a, int n)
 {
@@ -15,7 +17,7 @@ void print_array(int *a, int n)
 		printf("%d", a[index_of_array]);
 		if (index_of_array != (n - 1))
 		{
-			printf(",");
+			printf(", ");
 		}
 	}
 	putchar('\n');
