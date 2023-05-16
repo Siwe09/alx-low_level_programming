@@ -14,30 +14,27 @@
 
 char *_strdup(char *str)
 {
-	size_t len = strlen(str) + 1;
-	char *new_str = malloc(len);
 	char *s;
+	int a = 0, i = 1;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-
-	if (new_str == NULL)
+	while (str[i])
 	{
-		return (NULL);
+		i++;
 	}
 
-	strcpy(new_str, str);
+	s = malloc((sizeof(char) * i) + 1);
 
-	return (new_str);
-
-	s = _strdup(NULL);
 	if (s == NULL)
+		return (NULL);
+	while (a < i)
 	{
-		printf("failed to allocate memory\n");
-		return (char*) 1;
+		s[a] = str[a];
+		a++;
 	}
-	free(s);
-	return (0);
+	s[a] = '\0';
+	return (s);
 }
