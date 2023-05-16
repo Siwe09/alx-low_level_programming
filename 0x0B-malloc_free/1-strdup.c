@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 /**
  * *_strdup - return a pointer to a newly allocated space in memory,
  * which contains a copy of the string given as a parameter.
@@ -15,6 +16,7 @@ char *_strdup(char *str)
 {
 	size_t len = strlen(str) + 1;
 	char *new_str = malloc(len);
+	char *s;
 
 	if (str == NULL)
 	{
@@ -29,4 +31,13 @@ char *_strdup(char *str)
 	strcpy(new_str, str);
 
 	return (new_str);
+
+	s = _strdup(NULL);
+	if (s == NULL)
+	{
+		printf("failed to allocate memory\n");
+		return (char*) 1;
+	}
+	free(s);
+	return (0);
 }
